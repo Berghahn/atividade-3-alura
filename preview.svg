@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="50%" stop-color="#eef2ff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-5%" width="120%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <filter id="btnShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#4f46e5" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .title { font-weight: 700; fill: #0f172a; font-size: 24px; }
+    .subtitle { font-weight: 500; fill: #64748b; font-size: 13px; }
+    .card-text { font-weight: 500; fill: #1e293b; font-size: 14px; }
+    .strike-text { font-weight: 400; fill: #94a3b8; font-size: 14px; text-decoration: line-through; }
+    .badge-text { font-weight: 600; font-size: 11px; }
+    .btn-text { font-weight: 600; fill: #ffffff; font-size: 13px; }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="850" height="680" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Main Card Container -->
+  <g transform="translate(65, 40)" filter="url(#cardShadow)">
+    <rect width="720" height="600" rx="24" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.5" />
+
+    <!-- 1. HEADER SECTION -->
+    <g transform="translate(36, 36)">
+      <!-- App Icon -->
+      <rect width="48" height="48" rx="14" fill="#4f46e5" />
+      <path d="M 16 24 L 20 28 L 32 16" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      <line x1="20" y1="32" x2="32" y2="32" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+
+      <!-- Title & Subtitle -->
+      <text x="62" y="24" class="font-sans title">Minha Lista de Tarefas</text>
+      <text x="62" y="42" class="font-sans subtitle">Organize suas atividades diárias com foco e simplicidade</text>
+
+      <!-- Progress Pill -->
+      <g transform="translate(480, 8)">
+        <rect width="168" height="32" rx="16" fill="#eef2ff" stroke="#e0e7ff" stroke-width="1" />
+        <circle cx="20" cy="16" r="6" fill="#4f46e5" />
+        <path d="M 17 16 L 19 18 L 23 14" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <text x="32" y="20" class="font-sans badge-text" fill="#4338ca">1 de 3 concluídas</text>
+        <rect x="126" y="7" width="34" height="18" rx="9" fill="#c7d2fe" />
+        <text x="131" y="20" class="font-sans badge-text" fill="#312e81" font-size="10">2 pend</text>
+      </g>
+    </g>
+
+    <!-- 2. TASK INPUT BOX -->
+    <g transform="translate(36, 108)">
+      <rect width="648" height="106" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+      
+      <!-- Input Text Bar -->
+      <g transform="translate(14, 12)">
+        <rect width="500" height="42" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+        <text x="16" y="26" class="font-sans" fill="#94a3b8" font-size="14">O que você precisa fazer hoje?</text>
+        
+        <!-- Add Button -->
+        <g transform="translate(510, 0)" filter="url(#btnShadow)">
+          <rect width="110" height="42" rx="10" fill="#4f46e5" />
+          <path d="M 24 21 L 34 21 M 29 16 L 29 26" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+          <text x="42" y="26" class="font-sans btn-text">Adicionar</text>
+        </g>
+      </g>
+
+      <!-- Sub-options Toolbar (Due Date + Priority) -->
+      <g transform="translate(14, 68)">
+        <line x1="0" y1="0" x2="620" y2="0" stroke="#f1f5f9" stroke-width="1" />
+        
+        <!-- Due Date Field -->
+        <g transform="translate(6, 12)">
+          <!-- Calendar icon -->
+          <rect x="0" y="0" width="14" height="14" rx="3" fill="none" stroke="#6366f1" stroke-width="1.5" />
+          <line x1="3" y1="4" x2="11" y2="4" stroke="#6366f1" stroke-width="1.5" />
+          <text x="20" y="12" class="font-sans" fill="#64748b" font-size="12" font-weight="500">Vencimento:</text>
+          
+          <rect x="94" y="-3" width="105" height="22" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+          <text x="102" y="12" class="font-sans" fill="#64748b" font-size="11">dd/mm/aaaa</text>
+          <text x="206" y="12" class="font-sans" fill="#94a3b8" font-size="11" font-style="italic">(Opcional)</text>
+        </g>
+
+        <!-- Priority Selector -->
+        <g transform="translate(420, 12)">
+          <!-- Flag icon -->
+          <path d="M 2 2 L 2 14 M 2 2 L 10 5 L 2 8" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="16" y="12" class="font-sans" fill="#64748b" font-size="12" font-weight="500">Prioridade:</text>
+          <rect x="80" y="-3" width="118" height="22" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+          <text x="88" y="12" class="font-sans" fill="#475569" font-size="11" font-weight="600">Baixa (Padrão) ▾</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 3. FILTER & SORT TOOLBAR -->
+    <g transform="translate(36, 234)">
+      <!-- Filter Tabs -->
+      <g transform="translate(0, 0)">
+        <rect width="260" height="34" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1" />
+        
+        <!-- Active Tab: Todas -->
+        <rect x="3" y="3" width="82" height="28" rx="7" fill="#ffffff" />
+        <text x="18" y="21" class="font-sans badge-text" fill="#4338ca">Todas</text>
+        <rect x="56" y="7" width="20" height="16" rx="8" fill="#e0e7ff" />
+        <text x="63" y="19" class="font-sans badge-text" fill="#3730a3" font-size="10">3</text>
+
+        <!-- Tab: Pendentes -->
+        <text x="100" y="21" class="font-sans badge-text" fill="#64748b">Pendentes</text>
+        <text x="156" y="21" class="font-sans badge-text" fill="#94a3b8" font-size="10">2</text>
+
+        <!-- Tab: Concluídas -->
+        <text x="182" y="21" class="font-sans badge-text" fill="#64748b">Concluídas</text>
+        <text x="244" y="21" class="font-sans badge-text" fill="#94a3b8" font-size="10">1</text>
+      </g>
+
+      <!-- Sort Dropdown -->
+      <g transform="translate(430, 4)">
+        <path d="M 2 5 L 6 1 L 10 5 M 6 1 L 6 11 M 14 7 L 10 11 M 10 11 L 10 1" stroke="#6366f1" stroke-width="1.3" fill="none" stroke-linecap="round" />
+        <text x="20" y="18" class="font-sans" fill="#64748b" font-size="12" font-weight="500">Ordenar:</text>
+        <rect x="70" y="-3" width="148" height="28" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+        <text x="78" y="16" class="font-sans" fill="#334155" font-size="11" font-weight="600">📅 Próximas de vencer ▾</text>
+      </g>
+
+      <!-- Priority Chip Filters -->
+      <g transform="translate(0, 44)">
+        <text x="2" y="14" class="font-sans" fill="#94a3b8" font-size="11" font-weight="500">Filtrar:</text>
+        
+        <!-- Chip Todas (Selected) -->
+        <rect x="42" y="0" width="50" height="20" rx="5" fill="#4f46e5" />
+        <text x="52" y="14" class="font-sans badge-text" fill="#ffffff">Todas</text>
+
+        <!-- Chip Urgente -->
+        <rect x="98" y="0" width="70" height="20" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+        <text x="105" y="14" class="font-sans badge-text" fill="#be123c">🔴 Urgente</text>
+
+        <!-- Chip Alta -->
+        <rect x="174" y="0" width="56" height="20" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+        <text x="181" y="14" class="font-sans badge-text" fill="#c2410c">🟠 Alta</text>
+
+        <!-- Chip Média -->
+        <rect x="236" y="0" width="62" height="20" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+        <text x="243" y="14" class="font-sans badge-text" fill="#b45309">🟡 Média</text>
+
+        <!-- Chip Baixa -->
+        <rect x="304" y="0" width="58" height="20" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+        <text x="311" y="14" class="font-sans badge-text" fill="#475569">⚪ Baixa</text>
+      </g>
+    </g>
+
+    <!-- 4. TASK LIST (CARDS) -->
+    <g transform="translate(36, 316)">
+      
+      <!-- ITEM 1: Urgente / Atrasada (Mais próxima / vencida primeiro) -->
+      <g transform="translate(0, 0)">
+        <rect width="648" height="74" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" />
+        <!-- Unchecked box -->
+        <rect x="16" y="24" width="24" height="24" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+        <!-- Text -->
+        <text x="52" y="34" class="font-sans card-text">Apresentar trabalho da aplicação To-Do List para a turma</text>
+        <!-- Badges -->
+        <g transform="translate(52, 46)">
+          <!-- Priority: Urgente -->
+          <rect width="60" height="18" rx="5" fill="#ffe4e6" stroke="#fecdd3" stroke-width="1" />
+          <text x="8" y="13" class="font-sans badge-text" fill="#9f1239">Urgente</text>
+          
+          <!-- Due Date: Atrasada -->
+          <g transform="translate(68, 0)">
+            <rect width="138" height="18" rx="5" fill="#fff1f2" stroke="#fecdd3" stroke-width="1" />
+            <path d="M 8 13 L 13 4 L 18 13 Z M 13 8 L 13 10 M 13 11 L 13 11.5" stroke="#e11d48" stroke-width="1.2" fill="none" />
+            <text x="22" y="13" class="font-sans badge-text" fill="#be123c">Atrasada (02/11/2026)</text>
+          </g>
+        </g>
+        <!-- Delete Button -->
+        <g transform="translate(606, 25)">
+          <path d="M 3 6 L 15 6 M 6 6 L 6 15 L 12 15 L 12 6 M 8 3 L 10 3" stroke="#94a3b8" stroke-width="1.5" fill="none" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- ITEM 2: Média / Vence Hoje -->
+      <g transform="translate(0, 84)">
+        <rect width="648" height="74" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" />
+        <!-- Unchecked box -->
+        <rect x="16" y="24" width="24" height="24" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+        <!-- Text -->
+        <text x="52" y="34" class="font-sans card-text">Explicar o fluxo da API REST com PHP e SQLite</text>
+        <!-- Badges -->
+        <g transform="translate(52, 46)">
+          <!-- Priority: Média -->
+          <rect width="54" height="18" rx="5" fill="#fef3c7" stroke="#fde68a" stroke-width="1" />
+          <text x="8" y="13" class="font-sans badge-text" fill="#92400e">Média</text>
+          
+          <!-- Due Date: Vence Hoje -->
+          <g transform="translate(62, 0)">
+            <rect width="84" height="18" rx="5" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
+            <circle cx="9" cy="9" r="4.5" fill="none" stroke="#d97706" stroke-width="1.2" />
+            <polyline points="9,6.5 9,9 11,9" stroke="#d97706" stroke-width="1.2" fill="none" />
+            <text x="18" y="13" class="font-sans badge-text" fill="#b45309">Vence hoje!</text>
+          </g>
+        </g>
+        <!-- Delete Button -->
+        <g transform="translate(606, 25)">
+          <path d="M 3 6 L 15 6 M 6 6 L 6 15 L 12 15 L 12 6 M 8 3 L 10 3" stroke="#94a3b8" stroke-width="1.5" fill="none" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- ITEM 3: Baixa / Concluída -->
+      <g transform="translate(0, 168)">
+        <rect width="648" height="74" rx="14" fill="#f8fafc" stroke="#f1f5f9" stroke-width="1" opacity="0.8" />
+        <!-- Checked Box -->
+        <rect x="16" y="24" width="24" height="24" rx="7" fill="#10b981" />
+        <path d="M 21 36 L 25 40 L 33 31" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Strike-through Text -->
+        <text x="52" y="34" class="font-sans strike-text">Configurar conexão PDO e migração automática no SQLite</text>
+        <!-- Badges -->
+        <g transform="translate(52, 46)">
+          <!-- Priority: Baixa -->
+          <rect width="48" height="18" rx="5" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1" />
+          <text x="8" y="13" class="font-sans badge-text" fill="#64748b">Baixa</text>
+          
+          <!-- Due Date: Concluída -->
+          <g transform="translate(56, 0)">
+            <rect width="138" height="18" rx="5" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1" />
+            <text x="8" y="13" class="font-sans badge-text" fill="#94a3b8">Vencimento: 01/11/2026</text>
+          </g>
+        </g>
+        <!-- Delete Button -->
+        <g transform="translate(606, 25)">
+          <path d="M 3 6 L 15 6 M 6 6 L 6 15 L 12 15 L 12 6 M 8 3 L 10 3" stroke="#cbd5e1" stroke-width="1.5" fill="none" stroke-linecap="round" />
+        </g>
+      </g>
+
+    </g>
+
+    <!-- 5. FOOTER BADGE -->
+    <g transform="translate(220, 564)">
+      <text class="font-sans" fill="#94a3b8" font-size="11">
+        Desenvolvido com <tspan font-weight="600" fill="#475569">React 19</tspan>, <tspan font-weight="600" fill="#475569">Tailwind CSS v4</tspan> e <tspan font-weight="600" fill="#475569">PHP 8 + SQLite</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

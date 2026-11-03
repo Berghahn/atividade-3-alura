@@ -1,0 +1,10 @@
+{
+  "name": "todolist-fullstack",
+  "version": "1.0.0",
+  "description": "Aplicação de Lista de Tarefas com React, Tailwind CSS, PHP e SQLite",
+  "scripts": {
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "backend": "php -S localhost:8000 -t backend"
+  }
+}
